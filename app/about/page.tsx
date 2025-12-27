@@ -26,7 +26,7 @@ export default function AboutPage() {
     name: "Jaidev B",
     title: "Data Science & GenAI Engineer",
     description: "Focused on building solutions at the intersection of data science and generative AI. With hands-on experience in machine learning and GenAI systems, I turn ideas into practical real-world impact.",
-    image: "/placeholder-avatar.jpg", // This would be your actual image
+    image: "/jaidev-mod.jpg", // This would be your actual image
     location: "Coimbatore, Tamil Nadu, IN",
     availability: "Open to new opportunities"
   };
@@ -106,8 +106,14 @@ export default function AboutPage() {
             <div className="p-6">
               <div className="flex flex-col items-center text-center">
                 <div className="mb-6">
-                  <div className="w-32 h-32 rounded-full bg-black flex items-center justify-center text-4xl font-bold text-white">
-                    J
+                  <div className="w-32 h-32 rounded-full bg-black overflow-hidden flex items-center justify-center">
+                    <img 
+                      src={bio.image} 
+                      alt={bio.name}
+                      className="w-full h-full object-cover rounded-full"
+                      width={128}
+                      height={128}
+                    />
                   </div>
                 </div>
                 <div>
