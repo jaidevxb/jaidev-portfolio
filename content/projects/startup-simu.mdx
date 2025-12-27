@@ -1,0 +1,57 @@
+---
+title: "startup simu"
+description: Interactive cap table and exit simulator for startups, modeling SAFEs, priced rounds, ESOPs, dilution, and founder secondaries.
+date: "2025-08-30"
+published: true
+url: "https://startup-simulator.netlify.app/"
+repository: jaidevxb/Startup-Value-Simulator-V2.0
+---
+
+[![](/images/projects/startup-simu.PNG)](https://startup-simulator.netlify.app/)
+
+Startup Value Simulator is an interactive web app that helps founders and early employees model startup financing and exits with precision.
+
+It lets you simulate real-world funding scenarios — from SAFEs to priced rounds — and clearly see how ownership, dilution, and returns change over time.
+
+What it does
+- Model SAFE notes (cap, discount, MFN)
+- Simulate priced equity rounds
+- Track founder dilution across multiple rounds
+- Handle ESOP pool creation and top-ups (pre & post money)
+- Model founder secondary sales
+- Run exit simulations to calculate cash outcomes
+- Maintain a transparent audit trail of every round
+
+Why it’s useful
+- Helps founders avoid cap table surprises
+- Makes dilution and valuation math visual and intuitive
+- Useful for learning, planning, and investor conversations
+- Accurate financial engine with test-backed calculations
+
+Tech highlights
+- React + TypeScript frontend
+- Pure, deterministic financial calculation engine
+- State persistence with scenario sharing
+- Fully tested cap table logic using Vitest
+
+Example (SAFE → Priced Round)
+```
+const safe = {
+  amount: 500_000,
+  valuationCap: 5_000_000,
+  discount: 0.2,
+};
+
+const pricedRound = {
+  preMoney: 10_000_000,
+  investment: 2_000_000,
+};
+```
+
+
+The simulator automatically:
+- Picks the better of cap vs discount
+- Converts SAFEs into equity
+- Issues new shares
+- Recalculates ownership to 100%
+- Shows founder, ESOP, and investor outcomes

@@ -1,0 +1,61 @@
+---
+title: automatic dustbin
+description: An automatic dustbin using sensors and a microcontroller for touchless waste disposal.
+date: "2025-10-07"
+url: "hidden"
+published: true
+---
+![](/images/projects/dustbin.png)
+
+**Description:**  
+This project is an Automatic Dustbin developed for my college technical symposium to demonstrate a simple and practical IoT-based automation concept. The system uses a proximity sensor to detect a user’s presence and automatically opens the lid, enabling hands-free waste disposal.
+
+The project focuses on applying basic electronics and embedded programming to solve a real-world hygiene problem. It was built as a working prototype and showcased during the symposium to explain sensor-based automation and microcontroller control logic.
+
+**Use case:**   
+Smart waste management, hygiene-focused public spaces, basic IoT demonstrations.
+
+**Sample Code (Arduino – Servo + Ultrasonic Sensor):** 
+```bash
+#include <Servo.h>
+
+Servo lidServo;
+
+const int trigPin = 9;
+const int echoPin = 10;
+const int servoPin = 6;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  lidServo.attach(servoPin);
+  lidServo.write(0); // Lid closed
+}
+
+void loop() {
+  long duration;
+  int distance;
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034 / 2;
+
+  if (distance > 0 && distance < 20) {
+    lidServo.write(90); // Open lid
+    delay(3000);
+    lidServo.write(0);  // Close lid
+  }
+}
+```
+
+**Components Used (optional section if you want):**  
+1. Arduino Uno
+2. Ultrasonic Sensor (HC-SR04)
+3. Servo Motor
+4. Dustbin lid mechanism
+5. Jumper wires & power supply

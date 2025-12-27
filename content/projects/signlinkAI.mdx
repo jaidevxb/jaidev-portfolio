@@ -1,0 +1,72 @@
+---
+title: "signlinkAI"
+description: Award-winning ISL recognition system that turns hand gestures into real-time text and speech — 1st Prize, Hackovate 2025.
+date: "2025-09-15"
+url: ""
+repository: 
+published: true
+
+---
+
+## Description:
+SignLink AI is an AI-powered assistive communication system designed to bridge the communication gap between hearing-impaired individuals and the general public. The project enables real-time Indian Sign Language (ISL) recognition and converts recognized gestures into on-screen text and audible speech, allowing seamless interaction without the need for a human interpreter.
+
+This project was developed and presented at Hackovate 2025, organized by the Institution’s Innovation Council, Government College of Technology, where it won First Prize for its societal relevance, technical depth, and alignment with the UN Sustainable Development Goals (SDG 4 & SDG 10).
+
+## Problem Addressed:
+- Over 18 million hearing-impaired individuals in India face daily communication barriers
+- Limited ISL fluency among teachers, doctors, and the general public
+- Internet-dependent solutions fail in rural and low-resource environments
+
+## What SignLink AI Does:
+- Captures live video feed via webcam
+- Detects and classifies ISL hand gestures in real time
+- Converts gestures into text output
+- Generates offline text-to-speech (TTS) audio for instant verbal communication
+- Runs efficiently on low-spec devices with no internet after setup
+
+## Technical Approach:
+1. Custom CNN model trained on a curated ISL dataset
+2. Dataset includes:
+    - Alphabets (A–Z)
+    - Numbers (0–9)
+    - 150+ commonly used ISL words (e.g., HELP, FOOD, WATER, THANK YOU)
+3. Optimized for low latency (less than 100 ms) real-time inference
+4. Offline TTS using lightweight speech engines
+
+**Example (simplified inference flow):**
+```bash
+frame = capture_webcam()
+gesture = model.predict(frame)
+text = label_map[gesture]
+speak(text)
+```
+
+## Key Strengths:
+- Offline-first design → usable in rural schools and clinics
+- Inclusive dataset tailored to Indian Sign Language
+- Low hardware requirements for accessibility
+- Scalable architecture for future expansion
+
+## Real-World Impact:
+1. **Education**: Enables inclusive classrooms for hearing-impaired students
+2. **Healthcare**: Improves doctor–patient communication
+3. **Public Services**: Enhances accessibility in banks and government offices
+4. **Daily Life**: Empowers independent communication
+
+## Tech Stack:
+- **Language**: Python
+- **Deep Learning**: Custom CNN (PyTorch)
+- **Computer Vision**: OpenCV
+- **TTS**: Offline text-to-speech (pyttsx3)
+- **Platform**: Runs on low-spec systems, cross-platform
+
+## Future Scope:
+- Dynamic gesture recognition (short sentences)
+- Two-way translation (text/speech → sign animation)
+- Mobile deployment
+- AR-based hands-free translation
+
+**SaaS Platform (Planned)** — Developing SignLink AI as a scalable **two-way communication** Software-as-a-Service initiative under the guidance of the Institution’s Innovation Council (IIC), enabling both sign → text/speech and text/speech → sign translation for wider adoption across schools, hospitals, and public services.
+
+![](/images/projects/signLink-win.jpeg)

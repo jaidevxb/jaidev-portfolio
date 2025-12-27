@@ -1,0 +1,57 @@
+---
+title: data analyst agent
+description: A LangGraph-based agentic AI system that thinks like a data analyst — not just a chatbot.
+url: ""
+repository: jaidevxb/mcp-data-analyst-agent
+published: true
+---
+
+## Description:
+The MCP-Powered Data Analyst Agent is an autonomous, agentic AI system designed to perform intelligent, end-to-end data analysis on real-world datasets. Unlike traditional notebooks or dashboards, the agent reasons about the user’s question, decides what steps are necessary, and executes only the required analysis actions.
+
+Built using a LangGraph state machine, the agent demonstrates true agentic behavior—planning, conditional execution, and grounded explanation—rather than static or prompt-only workflows.
+
+## How it works:
+1. User Input
+    - User uploads a CSV or Excel dataset
+    - Asks a natural-language analytical question
+
+2. LLM Planning
+    - An LLM generates a high-level analysis plan
+    - Example: ```inspect → analyze → visualize → explain```
+
+3. Intent-Aware Routing
+    - LangGraph determines which steps to execute
+    - Simple questions skip heavy analysis
+    - Insight-driven questions trigger full analysis + visualization
+
+4. Tool-Orchestrated Execution
+    - Dataset inspection (schema, size, missing values)
+    - Aggregations and computations using pandas
+    - Visual insights generated with matplotlib
+
+5. Grounded Explanation
+    - Insights are explained strictly from computed results
+    - No hallucination or speculative analysis
+    - Explanations adapt to student or policymaker perspectives when relevant
+
+## Why this project stands out:
+- Implements true agentic decision-making, not static pipelines
+- Avoids unnecessary computation through conditional execution
+- Demonstrates planning, reasoning, and tool orchestration
+- Works on real datasets, not toy examples
+- Focuses on correctness, explainability, and practical analytics
+
+## Tech Stack:
+**Python** - core language    
+**LangGraph** – agent state orchestration  
+**LangChain** - tool abstraction, LLM integration, and prompt management  
+**Google Gemini API** – planning and explanation  
+**Pandas** – data analysis  
+**Matplotlib** – visualization  
+**Streamlit** – interactive UI  
+
+## Project Status:
+- Core agent complete and functional
+- Supports inspection, analysis, visualization and explanation
+- Designed as a flagship agentic AI + data analytics portfolio project

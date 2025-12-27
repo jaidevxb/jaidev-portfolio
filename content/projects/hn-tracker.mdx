@@ -1,0 +1,23 @@
+---
+title: hacker news tracker
+description: HN Tracker is a daily-updating dashboard that fetches ~1000 HN posts, identifies programming languages, runs sentiment analysis, removes duplicates, and visualizes trends in Streamlit — fully automated with GitHub Actions.
+date: "2025-10-29"
+url: "https://hn-programming-tracker.streamlit.app/"
+published: true
+repository: jaidevxb/hn-programming-tracker
+---
+
+[![](/images/projects/hn-tracker.PNG)](https://hn-programming-tracker.streamlit.app/)
+
+Hacker News Programming Tracker is a fully automated analytics project that monitors and visualizes daily programming activity on Hacker News. It fetches fresh posts every day, enriches them with analysis, and updates a live dashboard automatically.
+
+Key capabilities:
+
+- Fetches the latest ~1000 Hacker News stories daily using the Algolia API
+- Classifies whether each post is programming-related and identifies the language mentioned
+- Performs sentiment analysis on post titles to understand positive/negative discussions
+- Stores cleaned, duplicate-free data in both CSV and SQLite formats
+- Provides an interactive Streamlit dashboard with keyword search, date filters, language filters, and visual charts
+- Automatically updates the dataset each morning using GitHub Actions
+- Ensures continuous deployment — the Streamlit app refreshes whenever new data is committed
+- This makes the project a complete mini data pipeline + dashboard system for tracking real-time tech and programming trends.

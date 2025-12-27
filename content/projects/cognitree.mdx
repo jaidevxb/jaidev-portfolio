@@ -1,0 +1,124 @@
+---
+title: cognitree
+description: AI-powered knowledge exploration game that grows an interactive tree using real-time, non-redundant Gemini search.
+date: "2025-12-15"
+url: ""
+repository: jaidevxb/cognitree/
+published: true
+---
+
+## Description:
+Cognitree is a web-based application that helps users explore complex topics visually. Each branch in the tree represents a unique piece of information retrieved using AI-powered search. Users actively grow, prune, and study branches to shape their learning path.
+
+## What it does:
+- Generates structured knowledge areas from a topic
+- Expands branches using real-time AI-powered search
+- Prevents duplicate information using negative prompting
+- Allows pruning and repositioning of branches
+- Creates flashcards from retrieved content
+- Creates quiz for self assessment
+- Ask doubts using an AI chatbot with branch-level context
+- Saves and restores complete game sessions (Coming Soon)
+
+## How it works (AI logic):
+
+- Initial Knowledge Generation
+```bash
+POST /api/search
+{
+  "query": "machine learning"
+}
+```
+
+- Gemini returns:
+```bash
+[
+  "Supervised vs Unsupervised Learning",
+  "Neural Networks",
+  "Model Evaluation Metrics",
+  "Overfitting and Regularization",
+  "Real-world Applications"
+]
+```
+These become the initial tree branches.
+
+- Branch Growth with Non-Redundant Search
+```bash
+POST /api/web-search
+{
+  "query": "machine learning",
+  "exclude": [
+    "Supervised vs Unsupervised Learning",
+    "Neural Networks"
+  ]
+}
+```
+The backend constructs:
+```bash
+"machine learning -supervised -neural networks"
+```
+Result:  
+New, unseen information  
+Attached to the selected branch  
+No repeated content across sessions
+
+- Flashcard Generation
+```bash
+POST /api/create-flashcards
+{
+  "nodeId": "branch_12",
+  "content": "Regularization helps prevent overfitting..."
+}
+```
+Gemini returns structured flashcards linked to that node.
+
+- Quiz Generation
+```bash
+POST /api/create-quiz
+{
+  "nodeId": "branch_12",
+  "content": "Regularization helps prevent overfitting..."
+  "numQuestions": 5
+}
+```
+Gemini generates structured quiz questions (MCQ) linked to the selected node for active recall and self-assessment.
+
+- AI Chatbot (Doubt Clarification)
+```bash
+POST /api/chat
+{
+  "nodeId": "branch_12",
+  "question": "Why does regularization reduce overfitting?"
+}
+```
+Gemini returns a focused, context-aware explanation based on the existing tree knowledge.
+
+This allows users to:  
+Ask follow-up doubts while learning  
+Get explanations without leaving the tree  
+Keep answers aligned with their current learning path
+
+
+## Play Guide (Quick):
+1. Enter a topic to generate the initial knowledge tree
+2. Grow branches to explore new information
+3. Prune branches that aren’t useful
+4. Create flashcards from branches for revision
+5. Add flowers/fruits to mark progress
+6. Generate quiz for active recall and self-assessment 
+7. Ask doubts using the built-in AI chatbot
+8. Save your tree and continue later (Coming Soon)
+
+## Why it’s useful:
+
+- Reduces information overload
+- Ensures every expansion is unique
+- Encourages structured exploration
+- Combines discovery, clarification, and revision in one interface
+- Useful for research, self-study, and concept mapping
+
+## Tech Stack:
+- Backend: FastAPI, SQLAlchemy, SQLite
+- Frontend: Vanilla JavaScript, HTML5 Canvas
+- AI: Gemini Chat + Search APIs
+- Persistence: Public game state storage (Coming Soon)

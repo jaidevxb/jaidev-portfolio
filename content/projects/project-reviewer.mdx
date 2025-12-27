@@ -1,0 +1,59 @@
+---
+title: "project reviewer"
+description: Agentic AI that reviews GitHub repos using deterministic analysis, LLM synthesis to produce reliable, resume-ready project evaluations.
+repository: jaidevxb/project-reviewer-agent
+date: "2025-12-18"
+published: true
+url: "https://project-reviewer-agent.streamlit.app/"
+  
+---
+
+[![](/images/projects/code-reviewer.PNG)](https://project-reviewer-agent.streamlit.app/)
+
+## Description:
+The **Autonomous Project Reviewer Agent** is a compact, explainable agentic system designed to automatically review GitHub repositories and generate human-readable summaries, scores, and actionable recommendations. Unlike typical AI code reviewers that rely heavily on LLMs, this system prioritizes deterministic static analysis for correctness and uses LLMs only for high-level synthesis.
+
+## What it does:
+1. Safely clones a GitHub repository and enumerates files
+2. Reads only whitelisted files with strict size and extension checks
+3. Runs deterministic checks for:
+    - Missing docstrings
+    - TODO/FIXME markers
+    - Oversized or poorly structured files
+4. Scores the project across:
+    - Code Quality
+    - Documentation
+    - Structure & Tests
+5. Uses an LLM (Groq) to:
+    - Summarize the project in plain English
+    - Generate clear, actionable improvement suggestions
+6. Outputs results via:
+    - CLI
+    - Streamlit UI
+    - Exportable Markdown / PDF reports
+
+## Why this project matters:
+Most AI reviewers hallucinate or over-generalize. This project demonstrates a production-style agentic approach where:
+- Core evaluation is deterministic and explainable
+- LLMs are used only where they add value (synthesis, communication)
+- Outputs are reliable, auditable, and resume-ready
+
+## Design Philosophy:
+- Deterministic logic > probabilistic guesses
+- Explainability over black-box outputs
+- Agentic systems that are:
+    - Reliable
+    - Practical
+    - Reviewable
+    - Real-world usable
+
+## Tech Stack:
+- **Language**: Python
+- **UI**: Streamlit
+- **LLM**: Groq API
+- **Tooling**: GitPython, python-dotenv
+
+## Project Status:
+- Core system complete and functional
+- CLI + UI supported
+- Roadmap includes GitHub Actions and multi-repo benchmarking
