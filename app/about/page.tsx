@@ -96,7 +96,7 @@ export default function AboutPage() {
   return (
     <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
       <Navigation />
-      <div className="container flex flex-col items-center px-4 py-20 mx-auto max-w-4xl">
+      <div className="container flex flex-col items-center px-4 pt-32 sm:py-20 mx-auto max-w-4xl">
         {/* Bio Section */}
         <div className="w-full mb-16">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl mb-6">
