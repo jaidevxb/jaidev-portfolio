@@ -28,7 +28,10 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <Link href="/about" className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-pointer text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
+      <Link
+        href="/about"
+        className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-pointer text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text"
+      >
         jaidev
       </Link>
 
@@ -40,5 +43,4 @@ export default function Home() {
       </div>
     </div>
   );
-
 }

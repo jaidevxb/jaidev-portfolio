@@ -3,10 +3,10 @@ title: air mouse
 description: Wireless air mouse built using ESP32 and MPU6050 for an IEEE hackathon, enabling cursor control and clicks via hand motion using BLE.
 date: "2025-11-01"
 published: true
-url: "hidden"
+url: ""
 ---
-![](/images/projects/air-mouse.png)
 
+![](/images/projects/air-mouse.png)
 
 **Description:**  
 This project is a **Wireless Air Mouse** built using an **ESP32** and **MPU6050 (gyroscope + accelerometer)** for an IEEE hackathon. The device uses Bluetooth Low Energy (BLE) to control the mouse cursor through hand movements, along with physical buttons for left click, right click, and scrolling.
@@ -18,7 +18,8 @@ The project was inspired by Circuit Forge’s Air Mouse implementation, which he
 **Inspiration & Reference:**  
 [Circuit Forge – Air Mouse](https://github.com/udit1567/Circuit_forge/tree/main/Air%20Mouse)
 
-**Sample Code (ESP32 + MPU6050 BLE Mouse)**  
+**Sample Code (ESP32 + MPU6050 BLE Mouse)**
+
 ```ts
 #include <BleMouse.h>
 #include <Adafruit_MPU6050.h>
@@ -93,7 +94,8 @@ We ended up building the working prototype just one day before the event. The ni
 
 After the event, we revisited the idea, replaced the damaged MPU6050, and rebuilt the circuit properly. With a fresh sensor and cleaner wiring, the Air Mouse worked as intended, allowing us to fully implement motion control, clicks, and scrolling.
 
-Although we didn’t win the hackathon, the experience taught us valuable lessons about:  
+Although we didn’t win the hackathon, the experience taught us valuable lessons about:
+
 - Time management during exams + hackathons
 - Hardware reliability and careful soldering
 - Debugging under pressure

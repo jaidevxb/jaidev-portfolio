@@ -5,14 +5,17 @@ import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jaidev.vercel.app/'),
+  metadataBase: new URL("https://jaidev.vercel.app/"),
   title: {
     default: "jaidev",
     template: "%s | jaidev",
-  },  description: "Turning caffeine and curiosity into GenAI at PinHead Analytics.",
+  },
+  description:
+    "Turning caffeine and curiosity into GenAI at PinHead Analytics.",
   openGraph: {
     title: "jaidev",
-    description: "Turning caffeine and curiosity into GenAI at PinHead Analytics.",
+    description:
+      "Turning caffeine and curiosity into GenAI at PinHead Analytics.",
     url: "https://jaidev.com",
     siteName: "jaidev",
     images: [
@@ -64,9 +67,7 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className="bg-black">
-        {children}
-      </body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }

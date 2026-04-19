@@ -16,15 +16,20 @@ export default async function ProjectsPage() {
     const viewCounts = await redis.mget<number[]>(
       ...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
     );
-    return viewCounts.reduce((acc, v, i) => {
-      acc[allProjects[i].slug] = v ?? 0;
-      return acc;
-    }, {} as Record<string, number>);
+    return viewCounts.reduce(
+      (acc, v, i) => {
+        acc[allProjects[i].slug] = v ?? 0;
+        return acc;
+      },
+      {} as Record<string, number>,
+    );
   };
 
   const views = await getViewCounts();
 
-  const featured = allProjects.find((project) => project.slug === "smart-traffic")!;
+  const featured = allProjects.find(
+    (project) => project.slug === "smart-traffic",
+  )!;
   const top2 = allProjects.find((project) => project.slug === "hn-tracker")!;
   const top3 = allProjects.find((project) => project.slug === "cognitree")!;
   const sorted = allProjects
@@ -50,7 +55,8 @@ export default async function ProjectsPage() {
             Projects
           </h2>
           <p className="mt-4 text-zinc-400">
-            Stuff I worked on while learning new tech and exploring what I enjoy building.
+            Stuff I worked on while learning new tech and exploring what I enjoy
+            building.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />
@@ -63,10 +69,10 @@ export default async function ProjectsPage() {
                   <div className="text-xs text-zinc-100">
                     {featured.date ? (
                       <time dateTime={new Date(featured.date).toISOString()}>
-                        {new Date(featured.date).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'short', 
-                          day: 'numeric'
+                        {new Date(featured.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
                         })}
                       </time>
                     ) : (

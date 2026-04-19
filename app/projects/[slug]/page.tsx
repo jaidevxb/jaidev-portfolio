@@ -44,4 +44,5 @@ export default async function PostPage({ params }: Props) {
         <Mdx code={project.body.code} />
       </article>
     </div>
-  );}
+  );
+}

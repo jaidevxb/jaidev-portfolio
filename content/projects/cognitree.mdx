@@ -8,9 +8,11 @@ published: true
 ---
 
 ## Description:
+
 Cognitree is a web-based application that helps users explore complex topics visually. Each branch in the tree represents a unique piece of information retrieved using AI-powered search. Users actively grow, prune, and study branches to shape their learning path.
 
 ## What it does:
+
 - Generates structured knowledge areas from a topic
 - Expands branches using real-time AI-powered search
 - Prevents duplicate information using negative prompting
@@ -23,6 +25,7 @@ Cognitree is a web-based application that helps users explore complex topics vis
 ## How it works (AI logic):
 
 - Initial Knowledge Generation
+
 ```bash
 POST /api/search
 {
@@ -31,6 +34,7 @@ POST /api/search
 ```
 
 - Gemini returns:
+
 ```bash
 [
   "Supervised vs Unsupervised Learning",
@@ -40,9 +44,11 @@ POST /api/search
   "Real-world Applications"
 ]
 ```
+
 These become the initial tree branches.
 
 - Branch Growth with Non-Redundant Search
+
 ```bash
 POST /api/web-search
 {
@@ -53,16 +59,20 @@ POST /api/web-search
   ]
 }
 ```
+
 The backend constructs:
+
 ```bash
 "machine learning -supervised -neural networks"
 ```
+
 Result:  
 New, unseen information  
 Attached to the selected branch  
 No repeated content across sessions
 
 - Flashcard Generation
+
 ```bash
 POST /api/create-flashcards
 {
@@ -70,9 +80,11 @@ POST /api/create-flashcards
   "content": "Regularization helps prevent overfitting..."
 }
 ```
+
 Gemini returns structured flashcards linked to that node.
 
 - Quiz Generation
+
 ```bash
 POST /api/create-quiz
 {
@@ -81,9 +93,11 @@ POST /api/create-quiz
   "numQuestions": 5
 }
 ```
+
 Gemini generates structured quiz questions (MCQ) linked to the selected node for active recall and self-assessment.
 
 - AI Chatbot (Doubt Clarification)
+
 ```bash
 POST /api/chat
 {
@@ -91,6 +105,7 @@ POST /api/chat
   "question": "Why does regularization reduce overfitting?"
 }
 ```
+
 Gemini returns a focused, context-aware explanation based on the existing tree knowledge.
 
 This allows users to:  
@@ -98,14 +113,14 @@ Ask follow-up doubts while learning
 Get explanations without leaving the tree  
 Keep answers aligned with their current learning path
 
-
 ## Play Guide (Quick):
+
 1. Enter a topic to generate the initial knowledge tree
 2. Grow branches to explore new information
 3. Prune branches that aren’t useful
 4. Create flashcards from branches for revision
 5. Add flowers/fruits to mark progress
-6. Generate quiz for active recall and self-assessment 
+6. Generate quiz for active recall and self-assessment
 7. Ask doubts using the built-in AI chatbot
 8. Save your tree and continue later (Coming Soon)
 
@@ -118,6 +133,7 @@ Keep answers aligned with their current learning path
 - Useful for research, self-study, and concept mapping
 
 ## Tech Stack:
+
 - Backend: FastAPI, SQLAlchemy, SQLite
 - Frontend: Vanilla JavaScript, HTML5 Canvas
 - AI: Gemini Chat + Search APIs

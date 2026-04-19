@@ -104,7 +104,7 @@ The easiest way to deploy your Next.js app is to use [Vercel](https://vercel.com
 title: Your Project Name
 description: Brief description of your project
 date: "YYYY-MM-DD"
-url: ""  # Live URL if available
+url: "" # Live URL if available
 published: true
 repository: username/repository-name
 ---
@@ -119,6 +119,7 @@ Detailed description of your project...
 ### Modifying Personal Information
 
 Update the personal information in:
+
 - `app/page.tsx` - Main page content
 - `app/contact/page.tsx` - Contact information
 
@@ -127,6 +128,7 @@ Update the personal information in:
 This portfolio uses Upstash Redis to track page views. Each project page has a view counter that increments when the page is visited. The analytics data is stored in Upstash Redis.
 
 To disable analytics:
+
 1. Remove the `incr.ts` API route
 2. Remove the analytics component from project pages
 3. Remove Upstash Redis environment variables

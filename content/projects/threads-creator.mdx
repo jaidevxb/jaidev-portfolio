@@ -5,11 +5,9 @@ date: "2025-12-14"
 url: "https://threadscreator.netlify.app/"
 repository: jaidevxb/threads-creator
 published: true
-
 ---
 
 [![](/images/projects/threads.png)](https://threadscreator.netlify.app/)
-
 
 ## Description:
 
@@ -18,13 +16,17 @@ Agentic Twitter Thread Creator is an agentic AI system built to generate high-qu
 This project was developed under the mentorship of Mr. Bargava (Alumnus) and as part of an internship at PinHead Analytics, with a strong focus on building production-grade agentic AI systems rather than demos.
 
 ## 1. Core Idea
+
 Instead of a single prompt → response flow, the system mirrors how real writers think and iterate through a multi-step agentic pipeline:
+
 ```bash
 source → filter → model → structure → draft → refine
 ```
+
 Each stage is handled by a specialized agent, enforcing clarity, scannability, and structure.
 
 ## 2. High-Level Flow (Agentic)
+
 ```py
 def generate_thread(input_data):
     template = infer_template(input_data)
@@ -46,17 +48,19 @@ def generate_thread(input_data):
 ```
 
 ## 3. What the System Does
+
 1. Accepts topic / notes / rough draft as input
 2. Learns patterns from real, high-performing Twitter threads
 3. Selects the most suitable thread template
 4. Generates and ranks multiple hook candidates
 5. Produces a structured thread containing:
-    - Hook
-    - Body tweets (≤15)
-    - TL;DR
-    - CTA
+   - Hook
+   - Body tweets (≤15)
+   - TL;DR
+   - CTA
 6. Outputs ready-to-publish text + structured JSON
-Example output:
+   Example output:
+
 ```json
 {
   "template": "checklist",
@@ -68,7 +72,9 @@ Example output:
 ```
 
 ## 4. DSPy Prompt Programming (Key Differentiator)
+
 Instead of static prompts, DSPy modules are used to program the LLM.
+
 ```py
 class GenerateHook(dspy.Module):
     def forward(self, topic, audience, angle):
@@ -76,10 +82,13 @@ class GenerateHook(dspy.Module):
             "Write a scroll-stopping hook using Ship30 principles"
         )(topic=topic, audience=audience, angle=angle)
 ```
+
 DSPy’s compiler is used to optimize prompt behavior against a labeled dataset of real threads.
 
 ## 5. Agentic Architecture (Agno-style)
+
 Each step is handled by a dedicated agent:
+
 ```bash
 agents = [
     RouterAgent(),
@@ -94,9 +103,11 @@ agents = [
     Verifier()
 ]
 ```
+
 The workflow is deterministic, reviewable, and debuggable step by step.
 
 ## 6. Automation & Data Pipeline
+
 ```bash
 n8n → scrape threads
      → filter by quality
@@ -106,12 +117,14 @@ n8n → scrape threads
 ```
 
 **Supabase stores**:
+
 - Raw threads
 - Labels (template, hook type, CTA)
 - Evaluation scores
 - Run metadata for reproducibility
 
 ## 7. Evaluation & Guardrails
+
 ```py
 assert tweet_count <= 15
 assert hook_present
@@ -120,12 +133,14 @@ assert cta_present
 ```
 
 Additional checks:
+
 - Readability score
 - Hook stop-scroll score
 - Claim groundedness (source-backed or opinion-only)
 - Side-by-side comparisons (Base vs DSPy vs Human-edited)
 
 ## 8. Why This Project Stands Out
+
 1. Uses real creator data, not synthetic examples
 2. Enforces Ship30for30 writing discipline
 3. Agent-based iteration instead of one-shot generation
@@ -133,6 +148,7 @@ Additional checks:
 5. Strong focus on evaluation, structure, and reproducibility
 
 ## 9. Tech Stack
+
 - **Language**: Python
 - **LLMs**: Gemini / GPT (pluggable adapters)
 - **Prompt Programming**: DSPy
@@ -141,6 +157,7 @@ Additional checks:
 - **Data & Storage**: Supabase
 
 ## 10. Project Status
+
 - Core system fully implemented
 - Dataset curated and labeled (500 threads)
 - DSPy prompts compiled and evaluated

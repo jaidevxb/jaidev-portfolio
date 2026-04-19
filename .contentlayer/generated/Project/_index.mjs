@@ -15,10 +15,10 @@ import projects__signlinkAiMdx from './projects__signlinkAI.mdx.json' assert { t
 import projects__smartTrafficMdx from './projects__smart-traffic.mdx.json' assert { type: 'json' }
 import projects__startupSimuMdx from './projects__startup-simu.mdx.json' assert { type: 'json' }
 import projects__statesClusteringMdx from './projects__states-clustering.mdx.json' assert { type: 'json' }
+import projects__stepupMdx from './projects__stepup.mdx.json' assert { type: 'json' }
 import projects__stockAnalysisMdx from './projects__stock-analysis.mdx.json' assert { type: 'json' }
-import projects__terraformProviderVercelMdx from './projects__terraform-provider-vercel.mdx.json' assert { type: 'json' }
 import projects__threadsCreatorMdx from './projects__threads-creator.mdx.json' assert { type: 'json' }
 import projects__touchDesignerMdx from './projects__touch-designer.mdx.json' assert { type: 'json' }
 import projects__tourismAnalysisMdx from './projects__tourism-analysis.mdx.json' assert { type: 'json' }
 
-export const allProjects = [projects__airMouseMdx, projects__anaystAgentMdx, projects__automaticDustbinMdx, projects__cognitreeMdx, projects__hnTrackerMdx, projects__jaidevMdx, projects__newtonRaphsonMdx, projects__projectReviewerMdx, projects__resistanceMdx, projects__resumeAgentMdx, projects__seatAnalysisMdx, projects__signlinkAiMdx, projects__smartTrafficMdx, projects__startupSimuMdx, projects__statesClusteringMdx, projects__stockAnalysisMdx, projects__terraformProviderVercelMdx, projects__threadsCreatorMdx, projects__touchDesignerMdx, projects__tourismAnalysisMdx]
+export const allProjects = [projects__airMouseMdx, projects__anaystAgentMdx, projects__automaticDustbinMdx, projects__cognitreeMdx, projects__hnTrackerMdx, projects__jaidevMdx, projects__newtonRaphsonMdx, projects__projectReviewerMdx, projects__resistanceMdx, projects__resumeAgentMdx, projects__seatAnalysisMdx, projects__signlinkAiMdx, projects__smartTrafficMdx, projects__startupSimuMdx, projects__statesClusteringMdx, projects__stepupMdx, projects__stockAnalysisMdx, projects__threadsCreatorMdx, projects__touchDesignerMdx, projects__tourismAnalysisMdx]

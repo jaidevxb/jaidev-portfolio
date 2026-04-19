@@ -14,6 +14,7 @@ Startup Value Simulator is an interactive web app that helps founders and early 
 It lets you simulate real-world funding scenarios — from SAFEs to priced rounds — and clearly see how ownership, dilution, and returns change over time.
 
 What it does
+
 - Model SAFE notes (cap, discount, MFN)
 - Simulate priced equity rounds
 - Track founder dilution across multiple rounds
@@ -23,18 +24,21 @@ What it does
 - Maintain a transparent audit trail of every round
 
 Why it’s useful
+
 - Helps founders avoid cap table surprises
 - Makes dilution and valuation math visual and intuitive
 - Useful for learning, planning, and investor conversations
 - Accurate financial engine with test-backed calculations
 
 Tech highlights
+
 - React + TypeScript frontend
 - Pure, deterministic financial calculation engine
 - State persistence with scenario sharing
 - Fully tested cap table logic using Vitest
 
 Example (SAFE → Priced Round)
+
 ```
 const safe = {
   amount: 500_000,
@@ -48,8 +52,8 @@ const pricedRound = {
 };
 ```
 
-
 The simulator automatically:
+
 - Picks the better of cap vs discount
 - Converts SAFEs into equity
 - Issues new shares

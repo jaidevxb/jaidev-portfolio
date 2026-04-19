@@ -1,0 +1,150 @@
+---
+title: stepup
+description: Full-stack product development platform that transforms beginners into product-ready developers through structured tracks, real-world projects, and community-driven learning.
+date: "2026-03-25"
+url: "https://stepup.pages.dev/"
+repository: jaidevxb/stepup-revamp
+published: true
+---
+
+[![](/images/projects/stepup.png)](https://stepup.pages.dev/)
+
+## Description:
+
+StepUp is a full-stack, community-driven learning platform designed to help developers move beyond tutorials and start building real-world products. Instead of passive learning, the platform enforces a structured “learn → build → ship” workflow across multiple specialization tracks.
+
+This project was developed as part of a real-world collaboration to redesign and rebuild an existing platform into a production-grade system, focusing on product thinking, user experience, and scalable architecture.
+
+## 1. Core Idea
+
+Most learning platforms focus only on content consumption.
+
+StepUp focuses on **execution and consistency**:
+
+```bash
+learn → track → build → ship → showcase
+```
+
+The system ensures users don’t just learn concepts, but actually apply them through projects and public sharing.
+
+## 2. Product Architecture (High-Level)
+
+The platform is built around three core loops:
+User → Learning Tracker → Project Log → Gallery → Feedback → Repeat
+Flow:
+
+- User signs up via OTP authentication
+- Selects a specialization track
+- Completes phase-based structured curriculum
+- Logs weekly projects
+- Submits finished work to public gallery
+- Builds in public and improves iteratively
+
+## 3. What the System Does
+
+Learning System
+
+- Phase-based structured curriculum (weeks + topics)
+- Progress tracking with completion %
+- Daily streak tracking (habit reinforcement)
+
+Project Execution Layer
+
+- Weekly project logging system
+- Status tracking (Not Started → In Progress → Done)
+- LinkedIn integration for build-in-public workflow
+
+Community Layer
+
+- Public project gallery
+- Showcase real projects across tracks
+- Enables peer inspiration and visibility
+
+Personal Dashboard
+
+- Track selection (FS, AI, Data Science, Analytics, DevOps)
+- Progress visualization
+- Phase-wise learning breakdown
+
+## 4. Authentication & User Flow
+
+```
+Signup → OTP Verification → Password Setup → Track Selection → Dashboard
+```
+
+- Email OTP-based authentication (Supabase)
+- First-time onboarding stores:
+- User profile
+- Selected track
+- Initial project roadmap
+
+## 5. System Design (Full Stack)
+
+StepUp is built as a production-grade full-stack system:
+
+1. Frontend
+
+- Next.js App Router (SSR + Client components)
+- Modular UI sections (Landing, Dashboard, Resources)
+- Responsive + mobile-first design
+
+2. Backend
+
+- Supabase (PostgreSQL + Auth + Storage)
+- Server + client separation for secure data handling
+- Middleware for session persistence
+
+3. Data Flow
+
+```
+UI → API/Server → Supabase DB → Storage → UI
+```
+
+## 6. Database Design (Core Entities)
+
+1. profiles → user data + selected track
+2. progress → completed topics
+3. projects → weekly project logs
+4. gallery_projects → public submissions
+
+This separation ensures:
+
+- scalability
+- clean querying
+- structured user progression
+
+## 7. Tech Stack
+
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Frontend**: React, Tailwind CSS, shadcn/ui
+- **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- **Forms & Validation**: React Hook Form + Zod
+- **Deployment**: Cloudflare Pages
+
+## 8. Key Learnings
+
+1. Transition from “coding features” → building products
+2. Understanding real-world workflows:
+
+- authentication
+- state management
+- database design
+
+3. Debugging complex full-stack issues
+4. Designing systems from a user-first perspective
+
+## 9. Project Status
+
+- Core platform fully implemented
+- Multi-track system live
+- Dashboard + gallery functional
+- Continuous iteration and feature expansion ongoing
+
+---
+
+This project was developed as part of a real-world collaboration to redesign and rebuild the StepUp platform, working closely with the original creator, Jeremy Asirwaad, focusing on improving usability, structure, and overall product experience.
+
+---
+
+View build journey on LinkedIn → [LinkedIn Post](https://www.linkedin.com/posts/jaidevb_buildinpublic-webdevelopment-fullstackdevelopment-activity-7441852396349272064-fKet?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE__8kIBAFH20ZYNhykG48_vfB3HO1xEvcM)

@@ -7,12 +7,12 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 var computedFields = {
   path: {
     type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
   slug: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
-  }
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
 };
 var Project = defineDocumentType(() => ({
   name: "Project",
@@ -20,27 +20,27 @@ var Project = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     published: {
-      type: "boolean"
+      type: "boolean",
     },
     title: {
       type: "string",
-      required: true
+      required: true,
     },
     description: {
       type: "string",
-      required: true
+      required: true,
     },
     date: {
-      type: "date"
+      type: "date",
     },
     url: {
-      type: "string"
+      type: "string",
     },
     repository: {
-      type: "string"
-    }
+      type: "string",
+    },
   },
-  computedFields
+  computedFields,
 }));
 var Page = defineDocumentType(() => ({
   name: "Page",
@@ -49,13 +49,13 @@ var Page = defineDocumentType(() => ({
   fields: {
     title: {
       type: "string",
-      required: true
+      required: true,
     },
     description: {
-      type: "string"
-    }
+      type: "string",
+    },
   },
-  computedFields
+  computedFields,
 }));
 var contentlayer_config_default = makeSource({
   contentDirPath: "./content",
@@ -78,24 +78,20 @@ var contentlayer_config_default = makeSource({
           },
           onVisitHighlightedWord(node) {
             node.properties.className = ["word--highlighted"];
-          }
-        }
+          },
+        },
       ],
       [
         rehypeAutolinkHeadings,
         {
           properties: {
             className: ["subheading-anchor"],
-            ariaLabel: "Link to section"
-          }
-        }
-      ]
-    ]
-  }
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
+    ],
+  },
 });
-export {
-  Page,
-  Project,
-  contentlayer_config_default as default
-};
+export { Page, Project, contentlayer_config_default as default };
 //# sourceMappingURL=compiled-contentlayer-config-AD7PLTJR.mjs.map
