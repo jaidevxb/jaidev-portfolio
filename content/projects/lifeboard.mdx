@@ -1,0 +1,179 @@
+---
+title: lifeboard
+description: Personal life operating system that combines productivity, finance, habits, and mindfulness into a single unified dashboard.
+date: "2026-03-01"
+url: "https://lifeboardplan.netlify.app"
+repository: jaidevxb/lifeboardplan
+published: true
+---
+
+[![](/images/projects/lifeboard.png)](https://lifeboardplan.netlify.app)
+
+## Description:
+
+LifeBoard is a full-stack personal life management system designed to replace fragmented productivity tools with a single, cohesive dashboard. It integrates task management, finance tracking, habit building, focus systems, and mindfulness into one unified experience.
+
+Unlike traditional productivity apps that optimize for features, LifeBoard is designed to optimize for **clarity, consistency, and emotional usability**, especially for students and young professionals.
+
+---
+
+## 1. Core Idea
+
+Most people use multiple disconnected tools:
+
+```bash
+tasks + notes + finance + habits + timers
+```
+
+This leads to:
+
+- context switching
+- inconsistent tracking
+- loss of long-term clarity
+
+LifeBoard solves this by acting as a personal operating system:
+
+```bash
+plan → track → execute → reflect → improve
+```
+
+---
+
+## 2. Product Architecture
+
+The system is built around interconnected life systems:
+
+```bash
+Tasks ↔ Habits ↔ Focus ↔ Finance ↔ Reflection ↔ Achievements
+
+```
+
+Each module feeds into others, creating a continuous feedback loop:
+
+1. Tasks drive productivity
+2. Habits drive consistency
+3. Focus sessions drive execution
+4. Daily logs drive reflection
+5. Achievements reinforce behavior
+
+---
+
+## 3. What the System Does
+
+#### Productivity Layer
+
+- Task management with priority, deadlines, and recurrence
+- Pomodoro-based focus timer linked to tasks
+- Daily productivity tracking via logs
+
+#### Habit System
+
+- Custom habit schedules (weekday-aware)
+- Smart streak tracking (skips inactive days)
+- Dashboard pinning for quick interaction
+
+#### Finance System
+
+- Expense tracking + real-time balance
+- Budget goals with progress tracking
+- Purchase planner synced with expenses
+
+#### Reflection & Mindfulness
+
+- Daily journaling with productivity rating
+- Meditation system with streak tracking
+- Intention-setting through rotating prompts
+
+#### Gamification Layer
+
+- Rank system based on productivity
+- Achievements for consistency and milestones
+- Behavioral reinforcement through progression
+
+---
+
+## 4. System Design (Full Stack)
+
+LifeBoard is built as a modular full-stack system:
+
+1. Frontend
+
+- React + TypeScript with component-driven architecture
+- Dashboard-centric UI for real-time visibility
+- Semantic design system for consistent theming
+
+2. Backend
+
+- Managed Postgres with row-level security
+- Auth + session management
+- Edge functions for logic and sync
+
+3. Data Flow
+
+```bash
+User Action → State Layer → Backend → Sync → Dashboard Update
+```
+
+---
+
+## 5. Key System Behaviors
+
+#### Recurring Task Engine
+
+- Completing a task auto-generates next occurrence
+- Maintains continuity without manual repetition
+
+#### Smart Habit Streaks
+
+- Tracks only active days
+- Prevents false streak breaks
+
+#### Finance Sync Logic
+
+- Purchases dynamically affect balance and expenses
+- Fully reversible state management
+
+#### Timezone-Aware Tracking
+
+- All streaks and logs calculated in IST
+- Ensures consistent daily boundaries
+
+---
+
+## 6. Why This Project Stands Out
+
+1. Goes beyond productivity → acts as a life operating system
+2. Integrates multiple domains into a single unified system
+3. Focuses on behavioral design, not just features
+4. Includes real-time state synchronization across modules
+5. Designed for long-term user consistency, not short-term usage
+
+---
+
+## 7. Tech Stack
+
+- **Frontend**: React, TypeScript, Tailwind CSS, shadcn/ui
+- **State & Data**: TanStack Query
+- **Backend**: Supabase
+- **Forms & Validation**: React Hook Form + Zod
+- **Routing**: React Router
+- **Date Handling**: date-fns + timezone support
+
+---
+
+## 8. Key Learnings
+
+- Designing systems that combine multiple domains (productivity + finance + habits)
+- Managing complex state synchronization across features
+- Building user flows focused on consistency and retention
+- Thinking beyond features → designing for behavior and usability
+
+---
+
+## 9. Project Status
+
+- Core system fully implemented
+- Multi-module dashboard functional
+- Continuous improvements and feature iteration ongoing
+
+---
